@@ -8,7 +8,7 @@ session_start();
 	if(isset($_POST['ac'])){
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "Sumit@360";
 
 		$conn = new mysqli($servername, $username, $password);
 
@@ -16,7 +16,7 @@ session_start();
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "USE bookstore";
+		$sql = "USE BookStore";
 		$conn->query($sql);
 
 		$sql = "SELECT * FROM book WHERE BookID = '".$_POST['ac']."'";
@@ -28,14 +28,14 @@ session_start();
 			$price = $row['Price'];
 		}
 
-		$sql = "INSERT INTO cart(BookID, Quantity, Price, TotalPrice) VALUES('".$bookID."', ".$quantity.", ".$price.", Price * Quantity)";
+		$sql = "INSERT INTO Cart(BookID, Quantity, Price, TotalPrice) VALUES('".$bookID."', ".$quantity.", ".$price.", Price * Quantity)";
 		$conn->query($sql);
 	}
 
 	if(isset($_POST['delc'])){
 		$servername = "localhost";
 		$username = "root";
-		$password = "";
+		$password = "Sumit@360";
 
 		$conn = new mysqli($servername, $username, $password);
 
@@ -43,16 +43,16 @@ session_start();
 		    die("Connection failed: " . $conn->connect_error);
 		} 
 
-		$sql = "USE bookstore";
+		$sql = "USE BookStore";
 		$conn->query($sql);
 
-		$sql = "DELETE FROM cart";
+		$sql = "DELETE FROM Cart";
 		$conn->query($sql);
 	}
 
 	$servername = "localhost";
 	$username = "root";
-	$password = "";
+	$password = "Sumit@360";
 
 	$conn = new mysqli($servername, $username, $password);
 
@@ -60,7 +60,7 @@ session_start();
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "USE bookstore";
+	$sql = "USE BookStore";
 	$conn->query($sql);	
 
 	$sql = "SELECT * FROM book";
@@ -105,7 +105,7 @@ echo '<blockquote>';
     echo "</tr>";
     echo "</table>";
 
-	$sql = "SELECT book.BookTitle, book.Image, cart.Price, cart.Quantity, cart.TotalPrice FROM book,cart WHERE book.BookID = cart.BookID;";
+	$sql = "SELECT book.BookTitle, book.Image, Cart.Price, Cart.Quantity, Cart.TotalPrice FROM book,Cart WHERE book.BookID = Cart.BookID;";
 	$result = $conn->query($sql);
 
     echo "<table style='width:20%; float:right;'>";
