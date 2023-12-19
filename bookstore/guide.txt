@@ -1,0 +1,8 @@
+install php dependencies using the command -- sudo yum install php8.1.x86_64 php8.1-gd.x86_64 php8.1-soap.x86_64 php8.1-intl.x86_64 php8.1-mysqlnd.x86_64 php8.1-pdo.x86_64 php8.1-fpm.x86_64 php8.1-odbc.x86_64 php8.1-common.x86_64 php8.1-xml.x86_64 -y
+
+install nginx and their are nginx config files paste them in the /etc/nginx/ folder and create the /usr/share/nginx/bookstore folder and paste the bookstore directory contents their and add that directory in the nginx.conf root .
+
+import the database.sql using the command mysql -u root -p < database.sql 
+before that set the mysql root password in the index.php file and wherever required 
+
+check the error logs of nginx if you have any error and also check php-fpm error logs 
