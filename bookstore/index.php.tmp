@@ -6,9 +6,9 @@
 <?php
 session_start();
 	if(isset($_POST['ac'])){
-		$servername = "${db_host1}";
-		$username = "${db_user1}";
-		$password = "${db_pass1}";
+		$servername = "db_host";
+		$username = "db_user";
+		$password = "db_pass";
 
 		$conn = new mysqli($servername, $username, $password);
 
@@ -33,9 +33,9 @@ session_start();
 	}
 
 	if(isset($_POST['delc'])){
-		$servername = "${db_host1}";
-		$username = "${db_user1}";
-		$password = "${db_pass1}";
+		$servername = "db_host";
+		$username = "db_user";
+		$password = "db_pass";
 
 		$conn = new mysqli($servername, $username, $password);
 
@@ -50,9 +50,9 @@ session_start();
 		$conn->query($sql);
 	}
 
-	$servername = "${db_host1}";
-	$username = "${db_user1}";
-	$password = "${db_pass1}";
+	$servername = "db_host";
+	$username = "db_user";
+	$password = "db_pass";
 
 	$conn = new mysqli($servername, $username, $password);
 
