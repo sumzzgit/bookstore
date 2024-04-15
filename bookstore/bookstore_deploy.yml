@@ -38,14 +38,17 @@
         owner: root
         group: root
         mode: 755
+        remote_src: yes
     - name: copy the nginx config file
       copy:
         src: /home/ansible/nginx_rhel.conf
         dest: /etc/nginx/nginx.conf
+        remote_src: yes
     - name: copy the nginx default config file
       copy:
         src: /home/ansible/bookstore/nginx.conf.default
         dest: /etc/nginx/nginx.conf.default
+        remote_src: yes
     - name: restart the nginx service
       service:
         name: nginx
@@ -79,10 +82,12 @@
         owner: root
         group: root
         mode: 755
+        remote_src: yes
     - name: copy the nginx config file
       copy:
         src: /home/ansible/nginx_ubuntu.conf
         dest: /etc/nginx/sites-available/default
+        remote_src: yes
     - name: create the hard link for the config file
       file:
         src: /etc/nginx/sites-available/default
